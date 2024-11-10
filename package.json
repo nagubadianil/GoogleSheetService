@@ -6,8 +6,8 @@
   "scripts": {
     "build:cjs": "babel src -d lib/cjs --env-name cjs",
     "build:esm": "babel src -d lib/esm --env-name esm",
-    "copy-files-cjs": "copyfiles -u 1 src/googleserviceaccount.json lib/cjs",
-  "copy-files-esm": "copyfiles -u 1 src/googleserviceaccount.json lib/esm",
+    "copy-files-cjs": "npx copyfiles -u 1 src/googleserviceaccount.json lib/cjs",
+  "copy-files-esm": "npx copyfiles -u 1 src/googleserviceaccount.json lib/esm",
   "copy-files": "npm run copy-files-cjs && npm run copy-files-esm",
     "build": "npm run build:cjs && npm run build:esm && npm run copy-files"
   },
@@ -24,7 +24,8 @@
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
     "axios": "^1.7.7",
-    "jsrsasign": "^11.1.0"
+    "jsrsasign": "^11.1.0",
+    "copyfiles": "^2.4.1"
   },
   "devDependencies": {
     "copyfiles": "^2.4.1"
